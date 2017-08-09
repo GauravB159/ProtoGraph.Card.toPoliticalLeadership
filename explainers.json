@@ -88,5 +88,105 @@
     "mla_age": 48,
     "mla_education": "Post Graduate",
     "mla_asset_inr_crore": 1.82
+  },
+  {
+    "district_name": "Aligarh",
+    "assembly_segment_name": "Aligarh",
+    "mla_name": "Sanjeev Raja",
+    "party_name": "BJP",
+    "mla_gender": "M",
+    "mla_age": 55,
+    "mla_education": "Graduate Professional",
+    "mla_asset_inr_crore": 0.57
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Atrauli",
+    "mla_name": "Sandeep Kumar Singh",
+    "party_name": "BJP",
+    "mla_gender": "M",
+    "mla_age": 26,
+    "mla_education": "Post Graduate",
+    "mla_asset_inr_crore": 1.43
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Barauli",
+    "mla_name": "Shri Dalveer Singh",
+    "party_name": "BJP",
+    "mla_gender": "M",
+    "mla_age": 73,
+    "mla_education": "Graduate Professional",
+    "mla_asset_inr_crore": 5.96
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Chharra",
+    "mla_name": "Ravendra Pal Singh",
+    "party_name": "BJP",
+    "mla_gender": "M",
+    "mla_age": 53,
+    "mla_education": "Class X",
+    "mla_asset_inr_crore": 2.95
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Etah",
+    "mla_name": "Jugendra Singh Yadav",
+    "party_name": "SP",
+    "mla_gender": "M",
+    "mla_age": 47,
+    "mla_education": "Graduate",
+    "mla_asset_inr_crore": 18.76
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Iglas",
+    "mla_name": "Rajveer Diler",
+    "party_name": "BJP",
+    "mla_gender": "M",
+    "mla_age": 59,
+    "mla_education": "Class VIII",
+    "mla_asset_inr_crore": 1.02
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Jalesar",
+    "mla_name": "Ranjeet Suman",
+    "party_name": "SP",
+    "mla_gender": "M",
+    "mla_age": 42,
+    "mla_education": "Post Graduate",
+    "mla_asset_inr_crore": 4.01
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Khair",
+    "mla_name": "Anoop",
+    "party_name": "BJP",
+    "mla_gender": "M",
+    "mla_age": 36,
+    "mla_education": "Class X",
+    "mla_asset_inr_crore": 0.1
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Koil",
+    "mla_name": "Anil Parashar",
+    "party_name": "BJP",
+    "mla_gender": "M",
+    "mla_age": 46,
+    "mla_education": "Graduate Professional",
+    "mla_asset_inr_crore": 4.95
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Marhara",
+    "mla_name": "Amit Gaurav",
+    "party_name": "SP",
+    "mla_gender": "M",
+    "mla_age": 41,
+    "mla_education": "Class XII",
+    "mla_asset_inr_crore": 1.88
   }
 ]

@@ -125,6 +125,7 @@ export default class ExplainerCard extends React.Component {
       let header_style = this.state.dataJSON.configs ? {color: this.state.dataJSON.configs.band_color} : undefined;
       return (
         <div id="protograph_div">
+          <h1>Leadership-MLA</h1>
           <table>
             <tr>
               <th>Assembly</th>
