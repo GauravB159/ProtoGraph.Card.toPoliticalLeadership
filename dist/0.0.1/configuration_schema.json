@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {},
+  "id": "http://example.com/example.json",
+  "properties": {
+    "band_color": {
+      "default": "#333",
+      "id": "/properties/band_color",
+      "title": "Band Color",
+      "type": "string",
+      "format": "color"
+    }
+  },
+  "type": "object"
+}

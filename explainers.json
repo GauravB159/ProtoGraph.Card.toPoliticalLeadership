@@ -1,0 +1,92 @@
+[
+  {
+    "district_name": "Agra Nagar",
+    "assembly_segment_name": "Agra Cantt.",
+    "mla_name": "Gutiyari Lal Duwesh",
+    "party_name": "BSP",
+    "mla_gender": "M",
+    "mla_age": 52,
+    "mla_education": "Class VIII",
+    "mla_asset_inr_crore": 5.41
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Agra North",
+    "mla_name": "Er Gyanendra Gautam",
+    "party_name": "BSP",
+    "mla_gender": "M",
+    "mla_age": 35,
+    "mla_education": "Graduate Professional",
+    "mla_asset_inr_crore": 4.08
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Agra Rural",
+    "mla_name": "Kalicharan Suman",
+    "party_name": "BSP",
+    "mla_gender": "M",
+    "mla_age": 52,
+    "mla_education": "Post Graduate",
+    "mla_asset_inr_crore": 1.79
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Agra South",
+    "mla_name": "Zulfiqar Ahmad Bhutto",
+    "party_name": "BSP",
+    "mla_gender": "M",
+    "mla_age": 44,
+    "mla_education": "Graduate",
+    "mla_asset_inr_crore": 7.28
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Bah",
+    "mla_name": "Madhusudan Sharma",
+    "party_name": "BSP",
+    "mla_gender": "M",
+    "mla_age": 51,
+    "mla_education": "Class VIII",
+    "mla_asset_inr_crore": 17.26
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Etmadpur",
+    "mla_name": "Ram Pratap Singh",
+    "party_name": "BJP",
+    "mla_gender": "M",
+    "mla_age": 50,
+    "mla_education": "Graduate Professional",
+    "mla_asset_inr_crore": 0.19
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Fatehabad",
+    "mla_name": "Umesh Sharma Saithiya",
+    "party_name": "BSP",
+    "mla_gender": "M",
+    "mla_age": 54,
+    "mla_education": "Class VIII",
+    "mla_asset_inr_crore": 2.07
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Fatehpur Sikri",
+    "mla_name": "Surajpal Singh",
+    "party_name": "BSP",
+    "mla_gender": "M",
+    "mla_age": 54,
+    "mla_education": "Class VIII",
+    "mla_asset_inr_crore": 2.07
+  },
+  {
+    "district_name": "",
+    "assembly_segment_name": "Kheragarh",
+    "mla_name": "Bhagwan Singh Kushwaha",
+    "party_name": "BSP",
+    "mla_gender": "M",
+    "mla_age": 48,
+    "mla_education": "Post Graduate",
+    "mla_asset_inr_crore": 1.82
+  }
+]

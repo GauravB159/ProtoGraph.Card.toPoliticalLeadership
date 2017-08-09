@@ -1,0 +1,4 @@
+node_modules
+simple-cors-http-server.py
+*.DS_Store
+npm-debug.log
