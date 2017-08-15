@@ -100,7 +100,12 @@ export default class EditExplainerCard extends React.Component {
   }
 
   renderSEO() {
-    let seo_blockquote = `<blockquote><h3>Leadership-MLA</h3><p>${this.state.dataJSON.card_data}</p></blockquote>`
+    let data = this.state.dataJSON.card_data.data.years;
+    console.log();
+    let blockquote_string = data.map((d, i) => {
+      return `<h3>${d.mla_name}</h3><p>${d.mla_party}</p><p>${d.mla_assembly}</p><p>${d.mla_education}</p>`
+    })
+    let seo_blockquote = '<blockquote>' + blockquote_string.join() + '</blockquote>'
     return seo_blockquote;
   }
 

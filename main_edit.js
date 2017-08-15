@@ -7,8 +7,7 @@ ProtoGraph.Card.toExplain.prototype.getData = function (data) {
 }
 
 ProtoGraph.Card.toExplain.prototype.renderSEO = function (data) {
-  this.mode = 'SEO';
-  console.log("Render SEO ");
+  this.renderMode = 'SEO';
   return this.containerInstance.renderSEO();
 }
 
