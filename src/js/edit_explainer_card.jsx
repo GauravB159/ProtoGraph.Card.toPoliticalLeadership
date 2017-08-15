@@ -39,8 +39,8 @@ export default class EditExplainerCard extends React.Component {
     // get sample json data based on type i.e string or object
     //console.log(axios.get(this.props.dataURL));
     if (this.state.fetchingData){
-      axios.all([axios.get(this.props.dataURL), axios.get(this.props.optionalConfigURL), axios.get(this.props.optionalConfigSchemaURL)])
-        .then(axios.spread((card, opt_config, opt_config_schema) => {
+      axios.all([axios.get(this.props.dataURL), axios.get(this.props.schemaURL), axios.get(this.props.optionalConfigURL), axios.get(this.props.optionalConfigSchemaURL)])
+        .then(axios.spread((card, schema, opt_config, opt_config_schema) => {
           //console.log(card.data);
           this.setState({
             fetchingData: false,
@@ -48,6 +48,7 @@ export default class EditExplainerCard extends React.Component {
               card_data: card.data,
               configs: opt_config.data
             },
+            schemaJSON: schema.data,
             optionalConfigJSON: opt_config.data,
             optionalConfigSchemaJSON: opt_config_schema.data
           });
@@ -99,7 +100,7 @@ export default class EditExplainerCard extends React.Component {
   }
 
   renderSEO() {
-    let seo_blockquote = `<blockquote><h3>${this.state.dataJSON.card_data.data.explainer_header}</h3><p>${this.state.dataJSON.card_data.data.explainer_text}</p></blockquote>`
+    let seo_blockquote = `<blockquote><h3>Leadership-MLA</h3><p>${this.state.dataJSON.card_data}</p></blockquote>`
     return seo_blockquote;
   }
 
@@ -155,8 +156,8 @@ export default class EditExplainerCard extends React.Component {
   }
 
   toggleMode(e) {
-    document.querySelector('.protograph_explainer_text').style.height = '70px'
-    document.querySelector('.protograph_explainer_text').innerHTML = this.state.dataJSON.card_data.data.explainer_text;
+    // document.querySelector('.protograph_explainer_text').style.height = '70px'
+    // document.querySelector('.protograph_explainer_text').innerHTML = this.state.dataJSON.card_data.data.explainer_text;
     let element = e.target.closest('a'),
       mode = element.getAttribute('data-mode');
     this.setState((prevState, props) => {
@@ -183,6 +184,21 @@ export default class EditExplainerCard extends React.Component {
         <div className="proto-container">
           <div className="ui grid form-layout">
             <div className="row">
+              <div className="four wide column proto-card-form">
+                <div>
+                  <div className="section-title-text">Fill the form</div>
+                  <div className="ui label proto-pull-right">
+                    ToExplain
+                  </div>
+                </div>
+                <JSONSchemaForm schema={this.renderSchemaJSON()}
+                  onSubmit={((e) => this.onSubmitHandler(e))}
+                  onChange={((e) => this.onChangeHandler(e))}
+                  formData={this.renderFormData()}>
+                  <a id="protograph-prev-link" className={`${this.state.publishing ? 'protograph-disable' : ''}`} onClick={((e) => this.onPrevHandler(e))}>{this.showLinkText()} </a>
+                  <button type="submit" className={`${this.state.publishing ? 'ui primary loading disabled button' : ''} default-button protograph-primary-button`}>{this.showButtonText()}</button>
+                </JSONSchemaForm>
+              </div>
               <div className="twelve wide column proto-card-preview proto-share-card-div">
                 <div className="protograph-menu-container">
                   <div className="ui compact menu">
@@ -203,6 +219,7 @@ export default class EditExplainerCard extends React.Component {
                 <ExplainerCard
                   mode={this.state.mode}
                   dataJSON={this.state.dataJSON}
+                  schemaJSON={this.state.schemaJSON}
                   optionalConfigJSON={this.state.optionalConfigJSON}
                   optionalConfigSchemaJSON={this.state.optionalConfigSchemaJSON}
                 />

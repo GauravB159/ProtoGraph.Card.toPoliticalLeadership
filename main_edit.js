@@ -7,7 +7,8 @@ ProtoGraph.Card.toExplain.prototype.getData = function (data) {
 }
 
 ProtoGraph.Card.toExplain.prototype.renderSEO = function (data) {
-  this.renderMode = 'SEO';
+  this.mode = 'SEO';
+  console.log("Render SEO ");
   return this.containerInstance.renderSEO();
 }
 
@@ -18,6 +19,7 @@ ProtoGraph.Card.toExplain.prototype.renderEdit = function (onPublishCallback) {
   ReactDOM.render(
     <EditExplainerCard
       dataURL={this.options.data_url}
+      schemaURL={this.options.schema_url}
       optionalConfigURL={this.options.configuration_url}
       optionalConfigSchemaURL={this.options.configuration_schema_url}
       onPublishCallback={this.onPublishCallback}

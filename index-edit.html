@@ -9,13 +9,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" />
     <link rel="stylesheet" type="text/css" href="./src/css/styles.css">
     <link rel="stylesheet" type="text/css" href="./src/css/edit-form.css">
+    <link rel="stylesheet" type="text/css" href="dist/0.0.1/card.min.css">
   </head>
   <body>
     <div id="explainer-div"></div></br>
-    <script src="http://cdn.bootcss.com/react/15.4.1/react.js"></script>
+    <!-- <script src="http://cdn.bootcss.com/react/15.4.1/react.js"></script>
     <script src="http://cdn.bootcss.com/react/15.4.1/react-dom.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./lib/js/react-jsonschema-form.js"></script>
+    <script src = "./dist/0.0.1/edit-card.min.js"></script> -->
+    <script src="./lib/js/react.js"></script>
+    <script src="./lib/js/react-dom.js"></script>
+    <script src="./lib/js/axios.min.js"></script>
+    <script src="./lib/js/react-jsonschema-form.js"></script>
+    <script src="./lib/js/jquery-3.1.1.min.js"></script>
+    <script src="./lib/js/semantic.min.js"></script>
     <script src = "./dist/0.0.1/edit-card.min.js"></script>
     <!-- <script src = "/dist/0.0.1/card.min.js"></script> -->
     <script type="text/javascript">
@@ -83,12 +91,13 @@
     var x = new ProtoGraph.Card.toExplain()
     x.init({
       selector: document.querySelector('#explainer-div'),
-      data_url: './explainers.json',
+      data_url: 'dist/0.0.1/sample.json',
+      schema_url: 'dist/0.0.1/schema.json',
       configuration_url: './dist/0.0.1/configuration_sample.json', //will come from local folder
       configuration_schema_url: './dist/0.0.1/configuration_schema.json' //will come from local folder
     })
     // x.renderScreenshot();
-    x.renderEdit();
+    x.renderSEO();
     </script>
   </body>
 </html>

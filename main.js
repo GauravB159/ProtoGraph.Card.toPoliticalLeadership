@@ -53,6 +53,7 @@ ProtoGraph.Card.toExplain.prototype.renderLaptop = function (data) {
   // })
 
   this.mode = 'laptop';
+  console.log("LAPTOP MODE IT IS");
   ReactDOM.render(
     <ExplainerCard
       dataURL={this.options.data_url}
@@ -97,4 +98,3 @@ ProtoGraph.Card.toExplain.prototype.renderScreenshot = function (data) {
       }}/>,
     this.options.selector);
 }
-

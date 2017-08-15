@@ -5,10 +5,73 @@
 #protograph_div{
   border-style: solid;
   border-width: 1px;
-  height: auto;
-  width: 400px;
+  width: 320px;
   border-radius: 10px;
   border-color: grey;
+  position: absolute;
+  overflow: inherit;
+}
+
+#mla_party_div, #mla_edu_div{
+  width: 50%;
+}
+
+h5{
+  margin-top: 3px;
+}
+
+.mla-details{
+  position: relative;
+  padding-left: 15px;
+  margin-top: 0px;
+  border-bottom-style: solid;
+  border-bottom-color: #C6CCCC;
+  border-bottom-width: 1px;
+}
+
+#bsp{
+  border-left-style: solid;
+  border-left-width: 2px;
+  border-left-color: #351B9B;
+}
+
+#bjp{
+  border-left-style: solid;
+  border-left-width: 2px;
+  border-left-color: #FF7600;
+}
+
+.mla-details img{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 25px;
+  height: 25px;
+}
+
+.status-titles{
+  color: grey;
+  font-size: 11px;
+  margin-bottom: 0px;
+}
+
+#card_title{
+  margin-left: 16px;
+  margin-top: 10px;
+}
+
+.mla-info{
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.card-scrollable{
+  height: inherit;
+  width: 100%;
+  /*right: -17px;*/
+  /*position: absolute;*/
 }
 
 body{

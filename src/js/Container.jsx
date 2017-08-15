@@ -95,94 +95,121 @@ export default class ExplainerCard extends React.Component {
   }
 
   renderLaptop() {
-    console.log("This will work", this.state.dataJSON.card_data.length);
+    console.log("RENDER LAPTOP WAS CALLED");
+    // console.log(this.state.dataJSON.card_data.data.years, "THIS SHOULD");
     if ( this.state.fetchingData ){
       return(<div>Loading</div>)
     } else {
-      console.log(this, "hdjhga");
       var that = this;
-      var dataReceived = this.state.dataJSON.card_data;
-      console.log(dataReceived, "cooooosaoooooododododoodo");
+      var dataReceived = this.state.dataJSON.card_data.data.years;
       var cards = dataReceived.map(function(data, i){
-        console.log(data, "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
-        //var ids = `proto${i}`
-        //console.log(data.iframe_url, i, ";;;;;;;;;;;;;;;;;;;;;");
-
+        let logo = "bjp.png";
+        let party_name = "none"
+        if (data.mla_party=="BJP") {
+          console.log("Party is BJP");
+          logo = "https://pbs.twimg.com/profile_images/812531108092874753/frVON4bm_400x400.jpg";
+          party_name="bjp";
+        }
+        else {
+          logo = "https://pbs.twimg.com/profile_images/709367473095573505/1rSy_xxJ_400x400.jpg";
+          party_name="bsp";
+        }
         return(
-          <tr>
-            <td className="assembly-seg">{data.assembly_segment_name}</td>
-            <td>{data.mla_name}</td>
-            <td className="party-name"><ul><li>{data.party_name}</li></ul></td>
-            <td className="assembly-seg">{data.mla_education}</td>
-          </tr>
+          <div className="mla-details" id={party_name}>
+            <img src={logo}/>
+            <h5>{data.mla_name}</h5>
+            <p className="status-titles">Assembly</p>
+            <p>{data.mla_assembly}</p>
+            <div className="mla-info" id="mla_party_div">
+              <p className="status-titles">Party</p>
+              <p>{data.mla_party}</p>
+            </div>
+            <div className="mla-info" id="mla_edu_div">
+              <p className="status-titles">Education</p>
+              <p>{data.mla_education}</p>
+            </div>
+          </div>
         )
       });
 
 
-      const data = this.state.dataJSON.card_data;
+      const data = this.state.dataJSON.card_data.data.years;
       // let styles = this.state.dataJSON.configs ? {borderLeft: `5px solid ${this.state.dataJSON.configs.band_color}`} : undefined
       // styles["width"] = "100%";
       let header_style = this.state.dataJSON.configs ? {color: this.state.dataJSON.configs.band_color} : undefined;
       return (
         <div id="protograph_div">
-          <h1>Leadership-MLA</h1>
-          <table>
-            <tr>
-              <th>Assembly</th>
-              <th>Name</th>
-              <th>Party</th>
-              <th>Education</th>
-            </tr>
+          <h3 id="card_title">Leadership-MLA</h3>
+          <div className="card-scrollable">
             {cards}
-          </table>
+          </div>
         </div>
       )
 
     }
   }
 
-  dataSet(data, ids){
-
-    setTimeout(() => {
-        if (!data.isRendered){
-          data.isRendered = true;
-          var p = new ProtoEmbed.initFrame(ids, data.iframe_url , "laptop");
-          console.log(p, "this id");
-          this.setState({initAllDivs: true})
-        }
-    }, 1000);
-    console.log(data, "This function has been called", ids, data.iframe_url);
-
-  }
+  // dataSet(data, ids){
+  //
+  //   setTimeout(() => {
+  //       if (!data.isRendered){
+  //         data.isRendered = true;
+  //         var p = new ProtoEmbed.initFrame(ids, data.iframe_url , "laptop");
+  //         this.setState({initAllDivs: true})
+  //       }
+  //   }, 1000);
+  //
+  // }
 
 
 
   renderMobile() {
-    console.log("MOBILE STATE WAS CALLED", this.state.dataJSON.card_data.length);
     if ( this.state.fetchingData ){
       return(<div>Loading</div>)
     } else {
-      console.log(this, "hdjhga");
       var that = this;
-      var dataReceived = this.state.dataJSON.card_data;
-      console.log(dataReceived, "cooooosaoooooododododoodo");
+      var dataReceived = this.state.dataJSON.card_data.data.years;
       var cards = dataReceived.map(function(data, i){
-        var ids = `proto${i}`
-        //console.log(data.iframe_url, i, ";;;;;;;;;;;;;;;;;;;;;");
-
+        let logo = "bjp.png";
+        let party_name = "none"
+        if (data.mla_party=="BJP") {
+          console.log("Party is BJP");
+          logo = "https://pbs.twimg.com/profile_images/812531108092874753/frVON4bm_400x400.jpg";
+          party_name="bjp";
+        }
+        else {
+          logo = "https://pbs.twimg.com/profile_images/709367473095573505/1rSy_xxJ_400x400.jpg";
+          party_name="bsp";
+        }
         return(
-          <div id={ids} className="stream_cards" height="auto">{that.dataSet(data, ids)}</div>
+          <div className="mla-details" id={party_name}>
+            <img src={logo}/>
+            <h5>{data.mla_name}</h5>
+            <p className="status-titles">Assembly</p>
+            <p>{data.mla_assembly}</p>
+            <div className="mla-info" id="mla_party_div">
+              <p className="status-titles">Party</p>
+              <p>{data.mla_party}</p>
+            </div>
+            <div className="mla-info" id="mla_edu_div">
+              <p className="status-titles">Education</p>
+              <p>{data.mla_education}</p>
+            </div>
+          </div>
         )
       });
 
 
-      const data = this.state.dataJSON.card_data;
-      let styles = this.state.dataJSON.configs ? {borderLeft: `5px solid ${this.state.dataJSON.configs.band_color}`} : undefined
+      const data = this.state.dataJSON.card_data.data.years;
+      // let styles = this.state.dataJSON.configs ? {borderLeft: `5px solid ${this.state.dataJSON.configs.band_color}`} : undefined
       // styles["width"] = "100%";
       let header_style = this.state.dataJSON.configs ? {color: this.state.dataJSON.configs.band_color} : undefined;
       return (
-        <div id="protograph_div" style = {styles}>
-          {cards}
+        <div id="protograph_div">
+          <h3 id="card_title">Leadership-MLA</h3>
+          <div className="card-scrollable">
+            {cards}
+          </div>
         </div>
       )
 
@@ -190,7 +217,8 @@ export default class ExplainerCard extends React.Component {
   }
 
   renderScreenshot() {
-    if (this.state.schemaJSON === undefined ){
+    console.log("SS WAS RENDERED");
+    if ( this.state.fetchingData ){
       return(<div>Loading</div>)
     } else {
       const data = this.state.dataJSON.card_data;
@@ -198,10 +226,48 @@ export default class ExplainerCard extends React.Component {
       let screenshot_styles =  {
         height:'auto'
       }
+
+      var that = this;
+      var dataReceived = this.state.dataJSON.card_data.data.years;
+
+      var cards = dataReceived.map(function(data, i){
+        let logo = "bjp.png";
+        let party_name = "none"
+        if (data.mla_party=="BJP") {
+          console.log("Party is BJP");
+          logo = "https://pbs.twimg.com/profile_images/812531108092874753/frVON4bm_400x400.jpg";
+          party_name="bjp";
+        }
+        else {
+          logo = "https://pbs.twimg.com/profile_images/709367473095573505/1rSy_xxJ_400x400.jpg";
+          party_name="bsp";
+        }
+        return(
+          <div className="mla-details" id={party_name}>
+            <img src={logo}/>
+            <h5>{data.mla_name}</h5>
+            <p className="status-titles">Assembly</p>
+            <p>{data.mla_assembly}</p>
+            <div className="mla-info" id="mla_party_div">
+              <p className="status-titles">Party</p>
+              <p>{data.mla_party}</p>
+            </div>
+            <div className="mla-info" id="mla_edu_div">
+              <p className="status-titles">Education</p>
+              <p>{data.mla_education}</p>
+            </div>
+          </div>
+        )
+      });
+
+
+
       return (
-          <div id="ProtoScreenshot" className = "protograph_card_div" style = {styles}>
-            {/* <h1 className="protograph_explainer_header"> {data.data.explainer_header} </h1> */}
-            <div className="protograph_explainer_text" style = {screenshot_styles}>{data.data.explainer_text}</div>
+          <div id="ProtoScreenshot" className = "protograph_card_div">
+            <h3 id="card_title">Leadership-MLA</h3>
+            <div className="card-scrollable">
+              {cards}
+            </div>
           </div>
 
       )
