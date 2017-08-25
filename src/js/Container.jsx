@@ -115,20 +115,13 @@ export default class ExplainerCard extends React.Component {
           party_name="bsp";
         }
         return(
-          <div className="mla-details" id={party_name}>
-            <img src={logo}/>
-            <h5>{data.mla_name}</h5>
-            <p className="status-titles">Assembly</p>
-            <p>{data.mla_assembly}</p>
-            <div className="mla-info" id="mla_party_div">
-              <p className="status-titles">Party</p>
-              <p>{data.mla_party}</p>
-            </div>
-            <div className="mla-info" id="mla_edu_div">
-              <p className="status-titles">Education</p>
-              <p>{data.mla_education}</p>
-            </div>
-          </div>
+          <tr id={party_name}>
+            <td className="mobile-mla-name"><h5>{data.mla_name}</h5></td>
+            <td className="mobile-mla-assembly"><p>{data.mla_assembly}</p></td>
+            <td className="mobile-mla-assets"><p>{data.mla_assets}</p></td>
+            <td className="mobile-mla-education"><p>{data.mla_education}</p></td>
+            <td className="mobile-mla-party"><img src={logo}/></td>
+          </tr>
         )
       });
 
@@ -138,10 +131,20 @@ export default class ExplainerCard extends React.Component {
       // styles["width"] = "100%";
       let header_style = this.state.dataJSON.configs ? {color: this.state.dataJSON.configs.band_color} : undefined;
       return (
-        <div id="protograph_div">
+        <div id="protograph_div_laptop">
+          <p id="assembly_location">Agra/ Agra Nagar</p>
           <h3 id="card_title">Leadership-MLA</h3>
           <div className="card-scrollable">
-            {cards}
+            <table>
+              <tr>
+                <th className="mobile-mla-name">Name</th>
+                <th className="mobile-mla-assembly">Assembly</th>
+                <th className="mobile-mla-assets">Assets</th>
+                <th className="mobile-mla-education">Education</th>
+                <th className="mobile-mla-party">Party</th>
+              </tr>
+              {cards}
+            </table>
           </div>
         </div>
       )
@@ -173,7 +176,6 @@ export default class ExplainerCard extends React.Component {
         let logo = "bjp.png";
         let party_name = "none"
         if (data.mla_party=="BJP") {
-          console.log("Party is BJP");
           logo = "https://pbs.twimg.com/profile_images/812531108092874753/frVON4bm_400x400.jpg";
           party_name="bjp";
         }
@@ -205,7 +207,7 @@ export default class ExplainerCard extends React.Component {
       // styles["width"] = "100%";
       let header_style = this.state.dataJSON.configs ? {color: this.state.dataJSON.configs.band_color} : undefined;
       return (
-        <div id="protograph_div">
+        <div id="protograph_div_mobile">
           <h3 id="card_title">Leadership-MLA</h3>
           <div className="card-scrollable">
             {cards}

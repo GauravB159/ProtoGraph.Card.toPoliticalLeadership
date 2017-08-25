@@ -6,42 +6,49 @@
         "mla_assembly": "Agra Cantt.",
         "mla_name": "Gutiyari Lal Duwesh",
         "mla_party": "BSP",
+        "mla_assets": "7cr",
         "mla_education": "Class VIII"
       },
       {
-        "mla_assembly": "Agra Cantt.",
-        "mla_name": "Gutiyari Lal Duwesh",
+        "mla_assembly": "Mumbai",
+        "mla_name": "Aditya Desai",
         "mla_party": "BJP",
-        "mla_education": "Class VIII"
+        "mla_assets": "8cr",
+        "mla_education": "BE EXTC"
       },
       {
         "mla_assembly": "Agra Cantt.",
-        "mla_name": "Gutiyari Lal Duwesh",
+        "mla_name": "Gaurav Bhagchandnani",
         "mla_party": "BSP",
+        "mla_assets": "2.2cr",
+        "mla_education": "BE Info Tech"
+      },
+      {
+        "mla_assembly": "Ahmedabad",
+        "mla_name": "Neil Miten Daftary",
+        "mla_party": "BJP",
+        "mla_assets": "10.45cr",
+        "mla_education": "BE Comps"
+      },
+      {
+        "mla_assembly": "Kandivali",
+        "mla_name": "Kamya Mehul Desai",
+        "mla_party": "BJP",
+        "mla_assets": "8cr",
+        "mla_education": "Class VIII"
+      },
+      {
+        "mla_assembly": "Thane",
+        "mla_name": "Madhura Vijay Gore",
+        "mla_party": "BJP",
+        "mla_assets": "6cr",
         "mla_education": "Class VIII"
       },
       {
         "mla_assembly": "Agra Cantt.",
         "mla_name": "Gutiyari Lal Duwesh",
         "mla_party": "BJP",
-        "mla_education": "Class VIII"
-      },
-      {
-        "mla_assembly": "Agra Cantt.",
-        "mla_name": "Gutiyari Lal Duwesh",
-        "mla_party": "BJP",
-        "mla_education": "Class VIII"
-      },
-      {
-        "mla_assembly": "Agra Cantt.",
-        "mla_name": "Gutiyari Lal Duwesh",
-        "mla_party": "BJP",
-        "mla_education": "Class VIII"
-      },
-      {
-        "mla_assembly": "Agra Cantt.",
-        "mla_name": "Gutiyari Lal Duwesh",
-        "mla_party": "BJP",
+        "mla_assets": "1cr",
         "mla_education": "Class VIII"
       }
     ]

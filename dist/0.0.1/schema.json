@@ -35,6 +35,11 @@
                 "title": "Party",
                 "default": ""
               },
+              "mla_assets": {
+                "type": "string",
+                "title": "Assets",
+                "default": ""
+              },
               "mla_education": {
                 "type": "string",
                 "title": "Education",
