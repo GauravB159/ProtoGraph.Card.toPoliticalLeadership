@@ -131,7 +131,7 @@ export default class ExplainerCard extends React.Component {
       // styles["width"] = "100%";
       let header_style = this.state.dataJSON.configs ? {color: this.state.dataJSON.configs.band_color} : undefined;
       return (
-        <div id="protograph_div_laptop">
+        <div id="protograph_div" className="laptop-div">
           <p id="assembly_location">Agra/ Agra Nagar</p>
           <h3 id="card_title">Leadership-MLA</h3>
           <div className="card-scrollable">
@@ -207,7 +207,7 @@ export default class ExplainerCard extends React.Component {
       // styles["width"] = "100%";
       let header_style = this.state.dataJSON.configs ? {color: this.state.dataJSON.configs.band_color} : undefined;
       return (
-        <div id="protograph_div_mobile">
+        <div id="protograph_div" className="mobile-div">
           <h3 id="card_title">Leadership-MLA</h3>
           <div className="card-scrollable">
             {cards}
