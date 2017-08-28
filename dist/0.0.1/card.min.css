@@ -26,8 +26,8 @@
   width: 50%;
 }
 
-h5{
-  margin-top: 3px;
+h5.leader-name{
+  margin-top: 10px;
 }
 
 .mla-details{
@@ -92,24 +92,28 @@ table.mla-table {
 .mobile-mla-name {
   width: 150px;
   word-wrap: break-word;
-  /*max-width: 234px;*/
+  text-align: left;
 }
 
 .mobile-mla-assembly {
-  /*width: auto;*/
+  width: 80px;
+  text-align: left;
   padding-left: 10px;
 }
 
 .mobile-mla-assets{
-  /*width: auto;*/
+  width: 80px;
+  text-align: left;
 }
 
 .mobile-mla-education {
-  /*width: auto;*/
+  width: 80px;
+  text-align: left;
 }
 
 .mobile-mla-party {
-  /*width: auto;*/
+  width: 80px;
+  text-align: left;
   /*text-align: right;*/
   padding-left: 40px;
 }
@@ -152,32 +156,7 @@ body{
   width: 50%;
 }
 
-th {
-  text-align: left;
-  width: 80px;
-}
 
-td {
-  text-align: left;
-  width: 80px;
-  /*word-wrap: break-word;*/
-}
-
-td.assembly-seg{
-  color: grey;
-}
-
-td.party-name{
-  color: grey;
-}
-
-ul{
-  padding-left:17px;
-}
-
-li{
-  text-indent: -6px;
-}
 
 .stream_cards {
   height: auto;

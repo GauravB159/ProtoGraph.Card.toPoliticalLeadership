@@ -109,7 +109,7 @@ export default class ExplainerCard extends React.Component {
         }
         return(
           <tr id={party_name}>
-            <td className="mobile-mla-name"><h5>{data.name}</h5></td>
+            <td className="mobile-mla-name"><h5 className="leader-name">{data.name}</h5></td>
             <td className="mobile-mla-assembly"><p>{data.assembly}</p></td>
             <td className="mobile-mla-assets"><p>{data.assets}</p></td>
             <td className="mobile-mla-education"><p>{data.education}</p></td>
@@ -177,7 +177,7 @@ export default class ExplainerCard extends React.Component {
         return(
           <div className="mla-details" id={party_name}>
             <img src={logo}/>
-            <h5>{data.name}</h5>
+            <h5 className="leader-name">{data.name}</h5>
             <p className="status-titles">Assembly</p>
             <p>{data.assembly}</p>
             <div className="mla-info" id="mla_party_div">
@@ -237,7 +237,7 @@ export default class ExplainerCard extends React.Component {
         return(
           <div className="mla-details" id={party_name}>
             <img src={logo}/>
-            <h5>{data.name}</h5>
+            <h5 className="leader-name">{data.name}</h5>
             <p className="status-titles">Assembly</p>
             <p>{data.assembly}</p>
             <div className="mla-info" id="mla_party_div">
