@@ -65,27 +65,27 @@ h5{
   padding-left: 16px;
 }
 
-table {
+table.mla-table {
   width: 640px;
   margin-bottom: 15px;
   table-layout: fixed;
 }
 
-tr {
+.mla-table tr {
   padding-bottom: 5px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #C6CCCC;
 }
 
-td img{
+.mla-table td img{
   width: 25px;
   height: 25px;
   border-radius: 50%;
   margin-top: 3px;
 }
 
-th {
+.mla-table th {
   color: grey;
 }
 

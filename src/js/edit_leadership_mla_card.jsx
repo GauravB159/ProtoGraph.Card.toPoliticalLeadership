@@ -36,12 +36,9 @@ export default class EditExplainerCard extends React.Component {
   }
 
   componentDidMount() {
-    // get sample json data based on type i.e string or object
-    //console.log(axios.get(this.props.dataURL));
     if (this.state.fetchingData){
       axios.all([axios.get(this.props.dataURL), axios.get(this.props.schemaURL), axios.get(this.props.optionalConfigURL), axios.get(this.props.optionalConfigSchemaURL)])
         .then(axios.spread((card, schema, opt_config, opt_config_schema) => {
-          //console.log(card.data);
           this.setState({
             fetchingData: false,
             dataJSON: {
@@ -73,7 +70,6 @@ export default class EditExplainerCard extends React.Component {
           dataJSON.configs = formData
           return {
             dataJSON: dataJSON
-            // optionalConfigJSON: dataJSON
           }
         })
         break;
@@ -100,10 +96,9 @@ export default class EditExplainerCard extends React.Component {
   }
 
   renderSEO() {
-    let data = this.state.dataJSON.card_data.data.years;
-    console.log();
+    let data = this.state.dataJSON.card_data.data.details;
     let blockquote_string = data.map((d, i) => {
-      return `<h3>${d.mla_name}</h3><p>${d.mla_party}</p><p>${d.mla_assembly}</p><p>${d.mla_education}</p>`
+      return `<h3>${d.name}</h3><p>${d.mla_party}</p><p>${d.mla_assembly}</p><p>${d.education}</p>`
     })
     let seo_blockquote = '<blockquote>' + blockquote_string.join() + '</blockquote>'
     return seo_blockquote;
@@ -161,8 +156,6 @@ export default class EditExplainerCard extends React.Component {
   }
 
   toggleMode(e) {
-    // document.querySelector('.protograph_explainer_text').style.height = '70px'
-    // document.querySelector('.protograph_explainer_text').innerHTML = this.state.dataJSON.card_data.data.explainer_text;
     let element = e.target.closest('a'),
       mode = element.getAttribute('data-mode');
     this.setState((prevState, props) => {
@@ -181,7 +174,6 @@ export default class EditExplainerCard extends React.Component {
 
   render() {
 
-    console.log("final", this.state.dataJSON.card_data);
     if (this.state.fetchingData) {
       return(<div>Loading</div>)
     } else {
@@ -193,7 +185,7 @@ export default class EditExplainerCard extends React.Component {
                 <div>
                   <div className="section-title-text">Fill the form</div>
                   <div className="ui label proto-pull-right">
-                    ToLeadershipMLA
+                    {this.state.dataJSON.card_data.data.title}
                   </div>
                 </div>
                 <JSONSchemaForm schema={this.renderSchemaJSON()}

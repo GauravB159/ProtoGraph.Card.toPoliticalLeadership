@@ -1,55 +1,56 @@
 {
   "data": {
+    "title": "Leadership MLA",
     "district": "Agra",
-    "years": [
+    "details": [
       {
-        "mla_assembly": "Agra Cantt.",
-        "mla_name": "Gutiyari Lal Duwesh",
-        "mla_party": "BSP",
-        "mla_assets": "7cr",
-        "mla_education": "Class VIII"
+        "assembly": "Agra Cantt.",
+        "name": "Gutiyari Lal Duwesh",
+        "party": "BSP",
+        "assets": "7cr",
+        "education": "Class VIII"
       },
       {
-        "mla_assembly": "Mumbai",
-        "mla_name": "Aditya Desai",
-        "mla_party": "BJP",
-        "mla_assets": "8cr",
-        "mla_education": "BE EXTC"
+        "assembly": "Mumbai",
+        "name": "Aditya Desai",
+        "party": "BJP",
+        "assets": "8cr",
+        "education": "BE EXTC"
       },
       {
-        "mla_assembly": "Agra Cantt.",
-        "mla_name": "Gaurav Bhagchandnani",
-        "mla_party": "BSP",
-        "mla_assets": "2.2cr",
-        "mla_education": "BE Info Tech"
+        "assembly": "Agra Cantt.",
+        "name": "Gaurav Bhagchandnani",
+        "party": "BSP",
+        "assets": "2.2cr",
+        "education": "BE Info Tech"
       },
       {
-        "mla_assembly": "Ahmedabad",
-        "mla_name": "Neil Miten Daftary",
-        "mla_party": "BJP",
-        "mla_assets": "10.45cr",
-        "mla_education": "BE Comps"
+        "assembly": "Ahmedabad",
+        "name": "Neil Miten Daftary",
+        "party": "BJP",
+        "assets": "10.45cr",
+        "education": "BE Comps"
       },
       {
-        "mla_assembly": "Kandivali",
-        "mla_name": "Kamya Mehul Desai",
-        "mla_party": "BJP",
-        "mla_assets": "8cr",
-        "mla_education": "Class VIII"
+        "assembly": "Kandivali",
+        "name": "Kamya Mehul Desai",
+        "party": "BJP",
+        "assets": "8cr",
+        "education": "Class VIII"
       },
       {
-        "mla_assembly": "Thane",
-        "mla_name": "Madhura Vijay Gore",
-        "mla_party": "BJP",
-        "mla_assets": "6cr",
-        "mla_education": "Class VIII"
+        "assembly": "Thane",
+        "name": "Madhura Vijay Gore",
+        "party": "BJP",
+        "assets": "6cr",
+        "education": "Class VIII"
       },
       {
-        "mla_assembly": "Agra Cantt.",
-        "mla_name": "Gutiyari Lal Duwesh",
-        "mla_party": "BJP",
-        "mla_assets": "1cr",
-        "mla_education": "Class VIII"
+        "assembly": "Agra Cantt.",
+        "name": "Gutiyari Lal Duwesh",
+        "party": "BJP",
+        "assets": "1cr",
+        "education": "Class VIII"
       }
     ]
   }

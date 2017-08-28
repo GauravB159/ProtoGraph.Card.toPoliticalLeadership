@@ -6,11 +6,17 @@
     "data": {
       "type": "object",
       "properties": {
+        "title": {
+          "title": "Card Title",
+          "type": "string",
+          "default": "Choose type",
+          "enum": ["Leadership MLA", "Leadership MP"]
+        },
         "district": {
           "title": "District",
           "type": "string"
         },
-        "years": {
+        "details": {
           "id": "/properties/data/properties/questions",
           "title": "MLA Details",
           "items": {
@@ -19,38 +25,39 @@
             "separator": "#",
             "hideTitle": true,
             "properties": {
-              "mla_assembly": {
+              "assembly": {
                 "title": "Assembly",
                 "id": "/properties/data/properties/questions/items/properties/question",
                 "type": "string",
                 "default": "None"
               },
-              "mla_name": {
+              "name": {
                 "type": "string",
                 "title": "Name",
                 "default": ""
               },
-              "mla_party": {
+              "party": {
                 "type": "string",
                 "title": "Party",
-                "default": ""
+                "default": "Party Name",
+                "enum": ["BJP", "BSP"]
               },
-              "mla_assets": {
+              "assets": {
                 "type": "string",
                 "title": "Assets",
                 "default": ""
               },
-              "mla_education": {
+              "education": {
                 "type": "string",
                 "title": "Education",
                 "default": ""
               }
             },
             "required": [
-              "mla_education",
-              "mla_party",
-              "mla_name",
-              "mla_assembly"
+              "education",
+              "party",
+              "name",
+              "assembly"
             ],
             "minItems": 1,
             "addButtonText": "Add another MLA",

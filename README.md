@@ -1,1 +1,1 @@
-# ProtoGraph.Card.toLeadershipMLA
+# ProtoGraph.Card.toPoliticalLeadership

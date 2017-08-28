@@ -37,8 +37,6 @@ export default class ExplainerCard extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.state.fetchingData);
-    // get sample json data based on type i.e string or object
     if (this.state.fetchingData){
       axios.all([axios.get(this.props.dataURL), axios.get(this.props.optionalConfigURL), axios.get(this.props.optionalConfigSchemaURL)])
         .then(axios.spread((card, opt_config, opt_config_schema) => {
@@ -79,7 +77,6 @@ export default class ExplainerCard extends React.Component {
     let data = this.state.dataJSON.card_data,
       wordArray = data.data.explainer_text.split(' '),
       props = this.props;
-    // console.log(wordArray, "wordArray", el, el.scrollHeight, el.offsetHeight)
     while(el.scrollHeight > el.offsetHeight) {
       wordArray.pop();
       el.innerHTML = wordArray.join(' ') + '...' + '<span><a id="protograph_read_more">Read more</a></span>';
@@ -88,25 +85,21 @@ export default class ExplainerCard extends React.Component {
       document.getElementById('protograph_read_more').addEventListener('click', function(){
         document.querySelector('.protograph_explainer_text').style.height = 'auto';
         document.querySelector('.protograph_explainer_text').innerHTML = data.data.explainer_text;
-        // console.log(props, "props")
         props.clickCallback();
       })
     }
   }
 
   renderLaptop() {
-    console.log("RENDER LAPTOP WAS CALLED");
-    // console.log(this.state.dataJSON.card_data.data.years, "THIS SHOULD");
     if ( this.state.fetchingData ){
       return(<div>Loading</div>)
     } else {
       var that = this;
-      var dataReceived = this.state.dataJSON.card_data.data.years;
+      var dataReceived = this.state.dataJSON.card_data.data.details;
       var cards = dataReceived.map(function(data, i){
         let logo = "bjp.png";
         let party_name = "none"
-        if (data.mla_party=="BJP") {
-          console.log("Party is BJP");
+        if (data.party=="BJP") {
           logo = "https://pbs.twimg.com/profile_images/812531108092874753/frVON4bm_400x400.jpg";
           party_name="bjp";
         }
@@ -116,26 +109,24 @@ export default class ExplainerCard extends React.Component {
         }
         return(
           <tr id={party_name}>
-            <td className="mobile-mla-name"><h5>{data.mla_name}</h5></td>
-            <td className="mobile-mla-assembly"><p>{data.mla_assembly}</p></td>
-            <td className="mobile-mla-assets"><p>{data.mla_assets}</p></td>
-            <td className="mobile-mla-education"><p>{data.mla_education}</p></td>
+            <td className="mobile-mla-name"><h5>{data.name}</h5></td>
+            <td className="mobile-mla-assembly"><p>{data.assembly}</p></td>
+            <td className="mobile-mla-assets"><p>{data.assets}</p></td>
+            <td className="mobile-mla-education"><p>{data.education}</p></td>
             <td className="mobile-mla-party"><img src={logo}/></td>
           </tr>
         )
       });
 
 
-      const data = this.state.dataJSON.card_data.data.years;
-      // let styles = this.state.dataJSON.configs ? {borderLeft: `5px solid ${this.state.dataJSON.configs.band_color}`} : undefined
-      // styles["width"] = "100%";
+      const data = this.state.dataJSON.card_data.data.details;
       let header_style = this.state.dataJSON.configs ? {color: this.state.dataJSON.configs.band_color} : undefined;
       return (
         <div id="protograph_div" className="laptop-div">
-          <p id="assembly_location">Agra/ Agra Nagar</p>
-          <h3 id="card_title">Leadership-MLA</h3>
+          <p id="assembly_location">{this.state.dataJSON.card_data.data.district}</p>
+          <h3 id="card_title">{this.state.dataJSON.card_data.data.title}</h3>
           <div className="card-scrollable">
-            <table>
+            <table className="mla-table">
               <tr>
                 <th className="mobile-mla-name">Name</th>
                 <th className="mobile-mla-assembly">Assembly</th>
@@ -171,11 +162,11 @@ export default class ExplainerCard extends React.Component {
       return(<div>Loading</div>)
     } else {
       var that = this;
-      var dataReceived = this.state.dataJSON.card_data.data.years;
+      var dataReceived = this.state.dataJSON.card_data.data.details;
       var cards = dataReceived.map(function(data, i){
         let logo = "bjp.png";
         let party_name = "none"
-        if (data.mla_party=="BJP") {
+        if (data.party=="BJP") {
           logo = "https://pbs.twimg.com/profile_images/812531108092874753/frVON4bm_400x400.jpg";
           party_name="bjp";
         }
@@ -186,29 +177,30 @@ export default class ExplainerCard extends React.Component {
         return(
           <div className="mla-details" id={party_name}>
             <img src={logo}/>
-            <h5>{data.mla_name}</h5>
+            <h5>{data.name}</h5>
             <p className="status-titles">Assembly</p>
-            <p>{data.mla_assembly}</p>
+            <p>{data.assembly}</p>
             <div className="mla-info" id="mla_party_div">
               <p className="status-titles">Party</p>
-              <p>{data.mla_party}</p>
+              <p>{data.party}</p>
             </div>
             <div className="mla-info" id="mla_edu_div">
               <p className="status-titles">Education</p>
-              <p>{data.mla_education}</p>
+              <p>{data.education}</p>
             </div>
           </div>
         )
       });
 
 
-      const data = this.state.dataJSON.card_data.data.years;
+      const data = this.state.dataJSON.card_data.data.details;
       // let styles = this.state.dataJSON.configs ? {borderLeft: `5px solid ${this.state.dataJSON.configs.band_color}`} : undefined
       // styles["width"] = "100%";
       let header_style = this.state.dataJSON.configs ? {color: this.state.dataJSON.configs.band_color} : undefined;
       return (
         <div id="protograph_div" className="mobile-div">
-          <h3 id="card_title">Leadership-MLA</h3>
+          <p id="assembly_location">{this.state.dataJSON.card_data.data.district}</p>
+          <h3 id="card_title">{this.state.dataJSON.card_data.data.title}</h3>
           <div className="card-scrollable">
             {cards}
           </div>
@@ -219,7 +211,6 @@ export default class ExplainerCard extends React.Component {
   }
 
   renderScreenshot() {
-    console.log("SS WAS RENDERED");
     if ( this.state.fetchingData ){
       return(<div>Loading</div>)
     } else {
@@ -230,13 +221,12 @@ export default class ExplainerCard extends React.Component {
       }
 
       var that = this;
-      var dataReceived = this.state.dataJSON.card_data.data.years;
+      var dataReceived = this.state.dataJSON.card_data.data.details;
 
       var cards = dataReceived.map(function(data, i){
         let logo = "bjp.png";
         let party_name = "none"
-        if (data.mla_party=="BJP") {
-          console.log("Party is BJP");
+        if (data.party=="BJP") {
           logo = "https://pbs.twimg.com/profile_images/812531108092874753/frVON4bm_400x400.jpg";
           party_name="bjp";
         }
@@ -247,16 +237,16 @@ export default class ExplainerCard extends React.Component {
         return(
           <div className="mla-details" id={party_name}>
             <img src={logo}/>
-            <h5>{data.mla_name}</h5>
+            <h5>{data.name}</h5>
             <p className="status-titles">Assembly</p>
-            <p>{data.mla_assembly}</p>
+            <p>{data.assembly}</p>
             <div className="mla-info" id="mla_party_div">
               <p className="status-titles">Party</p>
-              <p>{data.mla_party}</p>
+              <p>{data.party}</p>
             </div>
             <div className="mla-info" id="mla_edu_div">
               <p className="status-titles">Education</p>
-              <p>{data.mla_education}</p>
+              <p>{data.education}</p>
             </div>
           </div>
         )
@@ -266,7 +256,8 @@ export default class ExplainerCard extends React.Component {
 
       return (
           <div id="ProtoScreenshot" className = "protograph_card_div">
-            <h3 id="card_title">Leadership-MLA</h3>
+            <p id="assembly_location">{this.state.dataJSON.card_data.data.district}</p>
+            <h3 id="card_title">{this.state.dataJSON.card_data.data.title}</h3>
             <div className="card-scrollable">
               {cards}
             </div>
