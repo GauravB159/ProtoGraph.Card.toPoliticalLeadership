@@ -40,7 +40,7 @@
                 "type": "string",
                 "title": "Party",
                 "default": "Party Name",
-                "enum": ["BJP", "BSP"]
+                "enum": ["BSP", "BJP"]
               },
               "assets": {
                 "type": "string",

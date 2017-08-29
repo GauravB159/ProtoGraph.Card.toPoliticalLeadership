@@ -97,7 +97,7 @@ export default class ExplainerCard extends React.Component {
       var that = this;
       var dataReceived = this.state.dataJSON.card_data.data.details;
       var cards = dataReceived.map(function(data, i){
-        let logo = "bjp.png";
+        let logo = "https://pbs.twimg.com/profile_images/812531108092874753/frVON4bm_400x400.jpg";
         let party_name = "none"
         if (data.party=="BJP") {
           logo = "https://pbs.twimg.com/profile_images/812531108092874753/frVON4bm_400x400.jpg";
@@ -165,7 +165,7 @@ export default class ExplainerCard extends React.Component {
       var dataReceived = this.state.dataJSON.card_data.data.details;
       var cards = dataReceived.map(function(data, i){
         let logo = "bjp.png";
-        let party_name = "none"
+        let party_name = "https://pbs.twimg.com/profile_images/812531108092874753/frVON4bm_400x400.jpg"
         if (data.party=="BJP") {
           logo = "https://pbs.twimg.com/profile_images/812531108092874753/frVON4bm_400x400.jpg";
           party_name="bjp";
