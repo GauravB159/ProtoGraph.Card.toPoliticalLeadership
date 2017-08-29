@@ -3,17 +3,17 @@
   <head>
     <meta charset = "UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leadership MLA Card</title>
+    <title>Political Leadership Card</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" />
     <link rel="stylesheet" type="text/css" href="src/css/styles.css">
   </head>
   <body>
-    <div id="leadership-mla-div"></div>
+    <div id="political-leadership-div"></div>
     <script src = "dist/0.0.1/card.min.js"></script>
     <script type="text/javascript">
-    var x = new ProtoGraph.Card.toLeadershipMLA();
+    var x = new ProtoGraph.Card.toPoliticalLeadership();
     x.init({
-      selector: document.querySelector('#leadership-mla-div'),
+      selector: document.querySelector('#political-leadership-div'),
       data_url: "dist/0.0.1/sample.json",
       schema_url: 'dist/0.0.1/schema.json',
       configuration_url: "./dist/0.0.1/configuration_sample.json",

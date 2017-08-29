@@ -1,27 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LeadershipMLACard from './src/js/Container.jsx';
+import PoliticalLeadershipCard from './src/js/Container.jsx';
 
 window.ProtoGraph = window.ProtoGraph || {};
 window.ProtoGraph.Card = window.ProtoGraph.Card || {};
 
 
-ProtoGraph.Card.toLeadershipMLA = function () {
-  this.cardType = 'LeadershipMLACard';
+ProtoGraph.Card.toPoliticalLeadership = function () {
+  this.cardType = 'PoliticalLeadershipCard';
 }
 
-ProtoGraph.Card.toLeadershipMLA.prototype.init = function (options) {
+ProtoGraph.Card.toPoliticalLeadership.prototype.init = function (options) {
   this.options = options;
 }
 
-ProtoGraph.Card.toLeadershipMLA.prototype.getData = function (data) {
+ProtoGraph.Card.toPoliticalLeadership.prototype.getData = function (data) {
   return this.containerInstance.exportData();
 }
 
-ProtoGraph.Card.toLeadershipMLA.prototype.renderLaptop = function (data) {
+ProtoGraph.Card.toPoliticalLeadership.prototype.renderLaptop = function (data) {
   this.mode = 'laptop';
   ReactDOM.render(
-    <LeadershipMLACard
+    <PoliticalLeadershipCard
       dataURL={this.options.data_url}
       schemaURL={this.options.schema_url}
       optionalConfigURL={this.options.configuration_url}
@@ -34,10 +34,10 @@ ProtoGraph.Card.toLeadershipMLA.prototype.renderLaptop = function (data) {
     this.options.selector);
 }
 
-ProtoGraph.Card.toLeadershipMLA.prototype.renderMobile = function (data) {
+ProtoGraph.Card.toPoliticalLeadership.prototype.renderMobile = function (data) {
   this.mode = 'mobile';
   ReactDOM.render(
-    <LeadershipMLACard
+    <PoliticalLeadershipCard
       dataURL={this.options.data_url}
       schemaURL={this.options.schema_url}
       optionalConfigURL={this.options.configuration_url}
@@ -50,10 +50,10 @@ ProtoGraph.Card.toLeadershipMLA.prototype.renderMobile = function (data) {
     this.options.selector);
 }
 
-ProtoGraph.Card.toLeadershipMLA.prototype.renderScreenshot = function (data) {
+ProtoGraph.Card.toPoliticalLeadership.prototype.renderScreenshot = function (data) {
   this.mode = 'screenshot';
   ReactDOM.render(
-    <LeadershipMLACard
+    <PoliticalLeadershipCard
       dataURL={this.options.data_url}
       schemaURL={this.options.schema_url}
       optionalConfigURL={this.options.configuration_url}

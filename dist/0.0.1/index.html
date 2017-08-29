@@ -47,7 +47,7 @@
 
   </head>
   <body>
-    <div id="leadership-mla-div"></div>
+    <div id="political-leadership-div"></div>
     <!-- <script src="https://d2m6lzru8erw1k.cloudfront.net/lib/oasis.min.js"></script>
     <script src="https://d2m6lzru8erw1k.cloudfront.net/lib/protoGraph.min.js"></script>
 
@@ -62,7 +62,7 @@
     <script src="https://d2m6lzru8erw1k.cloudfront.net/lib/oasis.min.js"></script>
 
     <script type="text/javascript">
-    var x = new ProtoGraph.Card.toLeadershipMLA();
+    var x = new ProtoGraph.Card.toPoliticalLeadership();
     function findGetParameter(parameterName) {
         var result = null,
             tmp = [],
@@ -93,7 +93,7 @@
                 schema_base_path = base_url + "/" + schema_id;
 
             let options = {
-              selector: document.querySelector('#leadership-mla-div'),
+              selector: document.querySelector('#political-leadership-div'),
               data_url:"./sample.json",
               schema_url: schema_base_path + "./schema.json",
               configuration_url:"./configuration_sample.json",
@@ -116,7 +116,7 @@
           var that = this;
           var intervalId = setInterval(function(){
             console.log(x.getData(), "''''''''''''''''''''");
-              console.log(that, document.querySelector('#leadership-mla-div'), "that in get size")
+              console.log(that, document.querySelector('#political-leadership-div'), "that in get size")
             clientRect = x.getData();
             console.log("This is coollo0oo", x.getData());
             if(clientRect.height){
