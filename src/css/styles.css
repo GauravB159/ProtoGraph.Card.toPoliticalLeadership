@@ -8,8 +8,10 @@
   width: 320px;
   border-radius: 10px;
   border-color: grey;
-  position: absolute;
+  position: relative;
   overflow: inherit;
+  margin: 0 auto;
+  padding-bottom: 8px;
 }
 
 #protograph_div.laptop-div{
@@ -18,8 +20,9 @@
   width: 640px;
   border-radius: 10px;
   border-color: grey;
-  position: absolute;
+  position: relative;
   overflow: inherit;
+  margin: 0 auto;
 }
 
 #mla_party_div, #mla_edu_div{
