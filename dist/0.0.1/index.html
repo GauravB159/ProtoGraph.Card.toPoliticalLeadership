@@ -3,12 +3,7 @@
   <head>
     <meta charset = "UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explainer Card</title>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="card.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../src/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="../../src/css/edit-form.css">
+    <title>toPoliticalLeadership</title>
     <link rel="stylesheet" type="text/css" href="card.min.css">
     <script type="text/javascript">
       var siteId, origin, base_url;
@@ -27,6 +22,9 @@
         }
       } else if (origin === 'https://dkqrqc7q64awx.cloudfront.net') {
         siteId = '2';
+        base_url = origin;
+      } else {
+        siteId = '1';
         base_url = origin;
       }
 
@@ -47,85 +45,66 @@
 
   </head>
   <body>
-    <div id="political-leadership-div"></div>
-    <!-- <script src="https://d2m6lzru8erw1k.cloudfront.net/lib/oasis.min.js"></script>
-    <script src="https://d2m6lzru8erw1k.cloudfront.net/lib/protoGraph.min.js"></script>
-
-    <script src = "card.min.js"></script> -->
-    <script src="../../lib/js/react.js"></script>
-    <script src="../../lib/js/react-dom.js"></script>
-    <script src="../../lib/js/axios.min.js"></script>
-    <script src="../../lib/js/react-jsonschema-form.js"></script>
-    <script src="../../lib/js/jquery-3.1.1.min.js"></script>
-    <script src="../../lib/js/semantic.min.js"></script>
-    <script src = "edit-card.min.js"></script>
-    <script src="https://d2m6lzru8erw1k.cloudfront.net/lib/oasis.min.js"></script>
-
+    <div id="district-div"></div>
+    <script src="https://dwln9tzsi7g07.cloudfront.net/lib/protograph-core.min.js"></script>
+    <script src = "card.min.js"></script>
     <script type="text/javascript">
     var x = new ProtoGraph.Card.toPoliticalLeadership();
     function findGetParameter(parameterName) {
-        var result = null,
-            tmp = [],
-            search_url = decodeURIComponent(location.search);
+      var result = null,
+        tmp = [],
+        search_url = decodeURIComponent(location.search);
 
-        search_url
-            .substr(1)
-            .split("&")
-            .forEach(function (item) {
-              tmp = item.split("=");
-              if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-            });
-        return result;
+      search_url
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+      return result;
     }
 
     let view_cast_id = findGetParameter('view_cast_id'),
-      schema_id = findGetParameter('schema_id'),
-      mode = findGetParameter('mode');
-
+      schema_id = findGetParameter('schema_id');
 
     var ReceiverConsumer = Oasis.Consumer.extend({
       requests: {
         receive: function(mode) {
-          var that = this;
-          // if(typeof (view_cast_id) !== 'undefined' && typeof(schema_id) !== 'undefined'){
+          if(typeof (view_cast_id) !== 'undefined' && typeof(schema_id) !== 'undefined'){
             var that = this,
-                data_base_path = base_url + "/" + view_cast_id,
-                schema_base_path = base_url + "/" + schema_id;
+            data_base_path = base_url + "/" + view_cast_id,
+            schema_base_path = base_url + "/" + schema_id;
 
-            let options = {
-              selector: document.querySelector('#political-leadership-div'),
-              data_url:"./sample.json",
-              schema_url: schema_base_path + "./schema.json",
-              configuration_url:"./configuration_sample.json",
-              configuration_schema_url: './configuration_schema.json',
-              onClickCallback: function () {
-                let h = x.getData().height,
-                  w = x.getData().width;
-                that.send('resize_frame', {width: w, height: h})
-              }
-            };
-
-            // options.base_url = window.location.href.split("/index.html")[0];
-            x.init(options);
+            x.init({
+              selector: document.querySelector('#district-div-div'),
+              data_url: data_base_path + "/data.json",
+              schema_url: schema_base_path + "/schema.json",
+              configuration_url: data_base_path + "/view_cast.json",
+              // data_url: 'sample.json',
+              // schema_url: 'schema.json',
+              // configuration_url: 'configuration_sample.json',
+              configuration_schema_url: 'configuration_schema.json'
+            })
             renderWithMode(mode);
           }
-        //}
+        }
       },
       events: {
         get_size: function(){
           var that = this;
           var intervalId = setInterval(function(){
-            console.log(x.getData(), "''''''''''''''''''''");
-              console.log(that, document.querySelector('#political-leadership-div'), "that in get size")
-            clientRect = x.getData();
-            console.log("This is coollo0oo", x.getData());
+            try {
+              clientRect = x.getData();
+            } catch (err) {}
             if(clientRect.height){
               var height = clientRect.height,
                 width = clientRect.width;
               that.send("resize_frame", {height: height, width: width});
               clearInterval(intervalId);
             }
-          }, 1000)
+          }, 10)
+
         },
         change_mode: function(mode){
           renderWithMode(mode);
@@ -153,6 +132,7 @@
           break;
       }
     }
+
     </script>
   </body>
 </html>
