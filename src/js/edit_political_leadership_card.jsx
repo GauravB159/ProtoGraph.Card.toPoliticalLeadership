@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import ExplainerCard from './Container.jsx';
+import LeadershipCard from './Container.jsx';
 import JSONSchemaForm from '../../lib/js/react-jsonschema-form';
 
-export default class EditExplainerCard extends React.Component {
+export default class EditLeadershipCard extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -31,7 +31,7 @@ export default class EditExplainerCard extends React.Component {
       optionalConfigJSON: this.state.dataJSON.configs,
       optionalConfigSchemaJSON: this.state.optionalConfigSchemaJSON
     }
-    getDataObj["name"] = getDataObj.dataJSON.data.explainer_header.substr(0,225); // Reduces the name to ensure the slug does not get too long
+    getDataObj["name"] = getDataObj.dataJSON.data.district.substr(0,225); // Reduces the name to ensure the slug does not get too long
     return getDataObj;
   }
 
@@ -98,7 +98,7 @@ export default class EditExplainerCard extends React.Component {
   renderSEO() {
     let data = this.state.dataJSON.card_data.data.details;
     let blockquote_string = data.map((d, i) => {
-      return `<h3>${d.name}</h3><p>${d.mla_party}</p><p>${d.mla_assembly}</p><p>${d.education}</p>`
+      return `<h3>${d.name}</h3><p>${d.party}</p><p>${d.assembly}</p></p>`
     })
     let seo_blockquote = '<blockquote>' + blockquote_string.join() + '</blockquote>'
     return seo_blockquote;
@@ -213,7 +213,7 @@ export default class EditExplainerCard extends React.Component {
                     </a>
                   </div>
                 </div>
-                <ExplainerCard
+                <LeadershipCard
                   mode={this.state.mode}
                   dataJSON={this.state.dataJSON}
                   schemaJSON={this.state.schemaJSON}
