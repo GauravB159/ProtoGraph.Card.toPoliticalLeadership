@@ -1,4 +1,10 @@
 const webpack = require('webpack');
+const minifier = require('minifier')
+const input = './src/css/styles.css'
+const options = {
+  output: "./dist/0.0.1/card.min.css"
+}
+minifier.minify(input, options);
 
 module.exports = {
   // entry: './main.js',
@@ -10,16 +16,15 @@ module.exports = {
     publicPath: '/',
     filename: './dist/0.0.1/card.min.js',
   },
-  // output: {
-  //   path: './',
-  //   filename: './dist/0.0.1/card.min.js'
-  // },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
       }
     }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.AggressiveMergingPlugin()
   ],
   node: {
     net: 'empty',

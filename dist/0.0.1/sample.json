@@ -1,56 +1,16 @@
 {
   "data": {
-    "title": "Leadership MLA",
-    "district": "Agra",
+    "district": "Aligarh",
     "details": [
       {
-        "assembly": "Agra Cantt.",
-        "name": "Gutiyari Lal Duwesh",
-        "party": "BSP",
-        "assets": "7cr",
-        "education": "Class VIII"
+        "assembly": "Baghpat",
+        "name": "Dr. Satyapal Singh",
+        "party": "BJP"
       },
       {
-        "assembly": "Mumbai",
-        "name": "Aditya Desai",
-        "party": "BJP",
-        "assets": "8cr",
-        "education": "BE EXTC"
-      },
-      {
-        "assembly": "Agra Cantt.",
-        "name": "Gaurav Bhagchandnani",
-        "party": "BSP",
-        "assets": "2.2cr",
-        "education": "BE Info Tech"
-      },
-      {
-        "assembly": "Ahmedabad",
-        "name": "Neil Miten Daftary",
-        "party": "BJP",
-        "assets": "10.45cr",
-        "education": "BE Comps"
-      },
-      {
-        "assembly": "Kandivali",
-        "name": "Kamya Mehul Desai",
-        "party": "BJP",
-        "assets": "8cr",
-        "education": "Class VIII"
-      },
-      {
-        "assembly": "Thane",
-        "name": "Madhura Vijay Gore",
-        "party": "BJP",
-        "assets": "6cr",
-        "education": "Class VIII"
-      },
-      {
-        "assembly": "Agra Cantt.",
-        "name": "Gutiyari Lal Duwesh",
-        "party": "BJP",
-        "assets": "1cr",
-        "education": "Class VIII"
+        "assembly": "Kannauj",
+        "name": "Dimple Yadav",
+        "party": "SP"
       }
     ]
   }

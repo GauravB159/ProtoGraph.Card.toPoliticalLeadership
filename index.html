@@ -4,7 +4,7 @@
     <meta charset = "UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Political Leadership Card</title>
-    <link rel="stylesheet" href="https://dwln9tzsi7g07.cloudfront.net/Assets/semantic.min.css" />
+    <!-- <link rel="stylesheet" href="https://dwln9tzsi7g07.cloudfront.net/Assets/semantic.min.css" /> -->
     <link rel="stylesheet" type="text/css" href="src/css/styles.css">
   </head>
   <body>
@@ -19,12 +19,8 @@
       configuration_url: "./dist/0.0.1/configuration_sample.json",
       configuration_schema_url: './dist/0.0.1/configuration_schema.json'
     })
-    if (window.innerWidth <= 500) {
-      x.renderMobile();
-    }
-    else {
-      x.renderLaptop();
-    }
+    x.renderMobile();
+    // x.renderLaptop();
     </script>
   </body>
 </html>

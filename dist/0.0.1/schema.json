@@ -6,61 +6,41 @@
     "data": {
       "type": "object",
       "properties": {
-        "title": {
-          "title": "Card Title",
-          "type": "string",
-          "default": "Choose type",
-          "enum": ["Leadership MLA", "Leadership MP"]
-        },
         "district": {
           "title": "District",
           "type": "string"
         },
         "details": {
           "id": "/properties/data/properties/questions",
-          "title": "MLA Details",
+          "title": "Details",
           "items": {
             "id": "/properties/data/properties/questions/items",
-            "title": "MLA",
+            "title": "MP",
             "separator": "#",
             "hideTitle": true,
             "properties": {
               "assembly": {
-                "title": "Assembly",
+                "title": "Constituency",
                 "id": "/properties/data/properties/questions/items/properties/question",
-                "type": "string",
-                "default": "None"
+                "type": "string"
               },
               "name": {
                 "type": "string",
-                "title": "Name",
-                "default": ""
+                "title": "Name"
               },
               "party": {
                 "type": "string",
                 "title": "Party",
-                "default": "Party Name",
-                "enum": ["BSP", "BJP"]
-              },
-              "assets": {
-                "type": "string",
-                "title": "Assets",
-                "default": ""
-              },
-              "education": {
-                "type": "string",
-                "title": "Education",
-                "default": ""
+                "enum": ["BSP", "BJP", "SP", "Congress", "RLD", "IND"]
               }
             },
             "required": [
-              "education",
               "party",
               "name",
               "assembly"
             ],
             "minItems": 1,
-            "addButtonText": "Add another MLA",
+            "addButtonText": "Add another MP",
             "type": "object"
           },
           "minItems": 1,

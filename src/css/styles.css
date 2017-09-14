@@ -1,8 +1,6 @@
-/*#proto_explainer_div{
-  width: 100%;
-}*/
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
-#protograph_div.mobile-div{
+.mobile-div{
   border-style: solid;
   border-width: 1px;
   width: 320px;
@@ -12,9 +10,10 @@
   overflow: inherit;
   margin: 0 auto;
   padding-bottom: 8px;
+  font-family: 'Lato';
 }
 
-#protograph_div.laptop-div{
+.laptop-div{
   border-style: solid;
   border-width: 1px;
   width: 640px;
@@ -23,14 +22,17 @@
   position: relative;
   overflow: inherit;
   margin: 0 auto;
+  font-family: 'Lato';
 }
 
 #mla_party_div, #mla_edu_div{
   width: 50%;
 }
 
-h5.leader-name{
+.leader-name{
   margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 15px;
 }
 
 .mla-details{
@@ -40,31 +42,9 @@ h5.leader-name{
   border-bottom-style: solid;
   border-bottom-color: #C6CCCC;
   border-bottom-width: 1px;
+  margin-bottom: 5px;
 }
 
-#bsp .mobile-mla-name{
-  border-left-style: solid;
-  border-left-width: 2px;
-  border-left-color: #351B9B;
-}
-
-#bjp .mobile-mla-name{
-  border-left-style: solid;
-  border-left-width: 2px;
-  border-left-color: #FF7600;
-}
-
-#bsp{
-  border-left-style: solid;
-  border-left-width: 2px;
-  border-left-color: #351B9B;
-}
-
-#bjp{
-  border-left-style: solid;
-  border-left-width: 2px;
-  border-left-color: #FF7600;
-}
 
 .mla-details img{
   position: absolute;
@@ -166,12 +146,6 @@ body{
   margin: 0px;
 }
 
-.protograph_col_6 {
-  width: 50%;
-}
-
-
-
 .stream_cards {
   height: auto;
 }
@@ -179,49 +153,8 @@ body{
 #ProtoScreenshot {
   width: 450px;
   padding: 10px 15px;
-  margin-left: 20px;
   height: 450px;
   overflow: hidden;
-}
-
-#protograph-explainer-form-div {
-  display: inline-block;
-  top: 20px;
-}
-
-
-#protograph-explainer-card-div {
-  display: inline-block;
-  float: right;
-  top: 20px;
-}
-
-
-#protograph-prev-link {
-  cursor: pointer;
-  margin-left: 0.75em;
-}
-
-fieldset {
-  width:98%;
-}
-
-.protograph_explainer_header{
-  font-size: 20px;
-  line-height: 24px;
-  font-family: sans-serif;
-  font-weight: 900;
-  min-height: 24px;
-  margin-top: 0px;
-}
-
-.protograph_explainer_text {
-  margin: 0 0 6px;
-  font-family: sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5em;
-  height: 70px;
 }
 
 .protograph_card_div {
@@ -238,27 +171,7 @@ fieldset {
   box-sizing: border-box;
 }
 
-.protograph-edit-form {
-  border-right: 1px solid #efefef ;
-  box-sizing: border-box;
-}
-
-#protograph_read_more {
-  color: #086FB4;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.protograph-primary-button {
-  margin-left: 0.75em;
-}
 
 @media only screen and (max-width: 450px){
-  .protograph_explainer_text {
-    /*padding-left: 5px;*/
-  }
-  #protograph-explainer-card-div {
-    padding-right: 0px;
-    padding-left: 0px;
-  }
+
 }

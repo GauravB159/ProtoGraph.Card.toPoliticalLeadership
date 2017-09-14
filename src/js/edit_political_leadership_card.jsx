@@ -185,7 +185,7 @@ export default class EditExplainerCard extends React.Component {
                 <div>
                   <div className="section-title-text">Fill the form</div>
                   <div className="ui label proto-pull-right">
-                    {this.state.dataJSON.card_data.data.title}
+                    toPoliticalLeadership
                   </div>
                 </div>
                 <JSONSchemaForm schema={this.renderSchemaJSON()}
