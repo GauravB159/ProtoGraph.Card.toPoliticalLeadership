@@ -17,8 +17,13 @@
     "browserify": "^11.2.0",
     "browserify-shim": "^3.8.10",
     "css-loader": "^0.26.1",
-    "minifier": "^0.8.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
     "json-loader": "^0.5.4",
+    "minifier": "^0.8.1",
     "node-sass": "^4.5.3",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
@@ -30,7 +35,10 @@
     "build": "npm run build:std && npm run build:edit",
     "start": "webpack-dev-server --public --host 0.0.0.0",
     "build:std": "NODE_ENV=production webpack --config webpack.config.card.js --optimize-minimize",
-    "build:edit": "NODE_ENV=production webpack --config webpack.config.edit_card.js --optimize-minimize"
+    "build:edit": "NODE_ENV=production webpack --config webpack.config.edit_card.js --optimize-minimize",
+    "build_windows": "npm run build_windows:std && npm run build_windows:edit",
+    "build_windows:std": "SET NODE_ENV=production && webpack --config webpack.config.card.js --optimize-minimize",
+    "build_windows:edit": "SET NODE_ENV=production && webpack --config webpack.config.edit_card.js --optimize-minimize"
   },
   "author": "",
   "license": "ISC"

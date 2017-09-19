@@ -19,19 +19,26 @@
             "separator": "#",
             "hideTitle": true,
             "properties": {
+              "name": {
+                "type": "string",
+                "title": "Name"
+              },
               "assembly": {
                 "title": "Constituency",
                 "id": "/properties/data/properties/questions/items/properties/question",
                 "type": "string"
               },
-              "name": {
-                "type": "string",
-                "title": "Name"
-              },
               "party": {
                 "type": "string",
                 "title": "Party",
-                "enum": ["BSP", "BJP", "SP", "Congress", "RLD", "IND"]
+                "enum": ["BSP", "BJP", "SP", "Congress", "RLD", "IND"],
+                "default":"BSP"
+              },
+              "gender":{
+                "type":"string",
+                "title":"Gender",
+                "enum":["Male","Female"],
+                "default":"Male"
               }
             },
             "required": [

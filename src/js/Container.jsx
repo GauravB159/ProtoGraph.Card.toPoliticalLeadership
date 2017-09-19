@@ -65,6 +65,7 @@ export default class LeadershipCard extends React.Component {
               <td className="mobile-mla-name"><h5 className="leader-name">{data.name}</h5></td>
               <td className="mobile-mla-assembly"><p>{data.assembly}</p></td>
               <td className="mobile-mla-party"><p>{data.party}</p></td>
+              <td className="mobile-mla-gender"><p>{data.gender}</p></td>
             </tr>
           </tbody>
         )
@@ -79,8 +80,9 @@ export default class LeadershipCard extends React.Component {
               <thead>
                 <tr>
                   <th className="mobile-mla-name">Name</th>
-                  <th className="mobile-mla-assembly">Assembly</th>
+                  <th className="mobile-mla-assembly">Constituency</th>
                   <th className="mobile-mla-party">Party</th>
+                  <th className="mobile-mla-gender">Gender</th>
                 </tr>
               </thead>
               {cards}
@@ -100,13 +102,17 @@ export default class LeadershipCard extends React.Component {
         return(
           <div key={i} className="mla-details">
             <h5 className="leader-name">{data.name}</h5>
-            <div className="mla-info" id="mla_party_div">
+            <div className="mla-info mla-party-div">
               <p className="status-titles">Constituency</p>
               <p>{data.assembly}</p>
             </div>
-            <div className="mla-info" id="mla_party_div">
+            <div className="mla-info mla-party-div">
               <p className="status-titles">Party</p>
               <p>{data.party}</p>
+            </div>
+            <div className="mla-info mla-party-div">
+              <p className="status-titles">Gender</p>
+              <p>{data.gender}</p>
             </div>
           </div>
         )

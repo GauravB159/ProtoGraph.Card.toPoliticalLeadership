@@ -5,12 +5,14 @@
       {
         "assembly": "Baghpat",
         "name": "Dr. Satyapal Singh",
-        "party": "BJP"
+        "party": "BJP",
+        "gender":"Male"
       },
       {
         "assembly": "Kannauj",
         "name": "Dimple Yadav",
-        "party": "SP"
+        "party": "SP",
+        "gender":"Female"
       }
     ]
   }
